@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm1yptdtlurvh"]
+
+[ext_resource type="Script" path="res://Scripts/player_controller.gd" id="1_ecn6p"]
+[ext_resource type="PackedScene" uid="uid://c8qvq6x0o2c8u" path="res://Scenes/Characters/soldier_male.tscn" id="1_ojd8e"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_haqiv"]
+radius = 1.071
+height = 2.968
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ecn6p")
+
+[node name="Soldier_Male" parent="." instance=ExtResource("1_ojd8e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.747177, 0)
+shape = SubResource("CapsuleShape3D_haqiv")
+
+[connection signal="started_movement" from="." to="Soldier_Male" method="_on_player_started_movement"]
+[connection signal="stopped_movement" from="." to="Soldier_Male" method="_on_player_stopped_movement"]

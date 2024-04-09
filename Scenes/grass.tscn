@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://tan5u7t1b6i"]
+
+[ext_resource type="PackedScene" uid="uid://cmcmqefpmbo2t" path="res://Art/Models/grass.glb" id="1_a7ec7"]
+
+[node name="grass" instance=ExtResource("1_a7ec7")]

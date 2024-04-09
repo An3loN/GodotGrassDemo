@@ -1,0 +1,30 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://itdplw7qsq2m"]
+
+[sub_resource type="VisualShaderNodeVec3Constant" id="VisualShaderNodeVec3Constant_wu2up"]
+constant = Vector3(0, 0.15, 0)
+
+[sub_resource type="VisualShaderNodeDistanceFade" id="VisualShaderNodeDistanceFade_8pxkl"]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+
+
+
+void fragment() {
+// Vector3Constant:2
+	vec3 n_out2p0 = vec3(0.000000, 0.150000, 0.000000);
+
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+
+}
+"
+nodes/fragment/2/node = SubResource("VisualShaderNodeVec3Constant_wu2up")
+nodes/fragment/2/position = Vector2(-80, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeDistanceFade_8pxkl")
+nodes/fragment/3/position = Vector2(-140, 220)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)
